@@ -7,6 +7,10 @@ import { environment } from './environments/environment';
 if (environment.production) {
   enableProdMode();
 }
+import { defineCustomElements } from 'sanaa-stencil-components/loader';
 
-platformBrowserDynamic().bootstrapModule(AppModule)
+platformBrowserDynamic()
+  .bootstrapModule(AppModule)
   .catch(err => console.log(err));
+
+defineCustomElements(window);
